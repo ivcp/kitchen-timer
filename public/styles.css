@@ -1,0 +1,87 @@
+body {
+    font-family: Ubuntu;
+    background-color: #142850;
+    background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");    
+}
+
+.timer-box {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+input[type=text] {
+    width: 10%;
+    color: white;
+    padding: 13px;
+    margin-right: 10%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #27496d;
+    font-size: 1.4rem;
+    text-align: right;
+    
+}
+
+input[type=text]:focus {
+    border: 1px solid white;
+} 
+
+label {
+    display: block;
+    color: whitesmoke;
+    margin-right: 32%;
+    margin-bottom: 3%;
+}
+
+.start-button {
+    background-color: #27496d;
+    font-family: Ubuntu;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 0 1px 2px #142850;    
+}
+
+.start-button:hover {
+    background-color: #0c7b93;
+}
+
+.start-button:active {
+    background-color: #0c7b93;
+    transform: translateY(2px);
+}
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 7rem;    
+    letter-spacing: 25px;
+}
+
+.cancel-button {
+    background-color: #27496d;
+    font-size: 1.5rem;
+    font-family: Ubuntu;
+    letter-spacing: 1px;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-shadow: 0 1px 2px #142850;
+}
+
+.cancel-button:hover {
+    background-color: crimson;
+}
+
+.cancel-button:active {
+    background-color: gray;
+    transform: translateY(2px);
+}

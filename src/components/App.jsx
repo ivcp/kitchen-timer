@@ -1,20 +1,26 @@
-import React from 'react';
-
+import React, { useState } from "react";
+import Input from "./Input";
+import Timer from "./Timer";
 
 function App() {
+  const [newT, setNewT] = useState(5);
+  const [key, setKey] = useState(0)
+  
+
+  function minutesInput(nMin) {
+    setNewT(nMin);
+  }
+
+  function keyS(k){
+    setKey(k);   
+    
+  }
+
+  
   return (
     <div className="timer-box">
-      <div>
-        <form>
-          <label for="minutes">minutes:</label>
-          <input type="text" name="minutes" id="minutes" placeholder="0"></input>
-          <button type="button" className="start-button">Start</button>
-        </form>
-      </div>
-      <div>
-        <h1>04:99</h1>
-        <button type="button" className="cancel-button">Cancel</button>
-      </div>
+      <Input minutes={minutesInput} sendKey={keyS} />
+      <Timer setTime={newT} newKey={key} />
     </div>
   );
 }

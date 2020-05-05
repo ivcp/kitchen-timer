@@ -13,31 +13,10 @@ body {
 }
 
 
-input[type=number] {
-    width: 20%;
-    color: white;
-    padding: 13px;
-    margin-right: 10%;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #27496d;
-    font-size: 1.4rem;
-    text-align: right;
-    
-}
 
-input[type=number]:focus {
-    border: 1px solid white;
-} 
-
-label {
-    display: block;
-    color: whitesmoke;
-    margin-right: 32%;
-    margin-bottom: 3%;
-}
 
 .start-button {
+    display:inline-block;
     background-color: #27496d;
     font-family: Ubuntu;
     letter-spacing: 1px;
@@ -46,10 +25,30 @@ label {
     padding: 12px;
     border-radius: 12px;
     border: 1px solid black;
-    box-shadow: 0 1px 2px #142850;    
+    box-shadow: 0 1px 2px #142850;
+    margin: 0 20px; 
+    
+}
+
+.plus-minus{
+    display:inline-block;
+    margin: 0 20px;
+    background-color: #27496d;
+    font-family: Ubuntu;
+    font-size: 1.5rem;
+    color: white;
+    padding: 15px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 0 1px 2px #142850;
 }
 
 .start-button:hover {
+    background-color: #0c7b93;
+}
+.plus-minus:hover {
     background-color: #0c7b93;
 }
 
@@ -57,6 +56,12 @@ label {
     background-color: #0c7b93;
     transform: translateY(2px);
 }
+
+.plus-minus:active {
+    background-color: #0c7b93;
+    transform: translateY(2px);
+}
+
 
 h1 {
     font-family: 'Josefin Sans', sans-serif;

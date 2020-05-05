@@ -2,7 +2,11 @@ import React from "react";
 import Countdown from "react-countdown";
 
 function Time(props) {
-  const key = props.setTime + props.newKey;
+  const key = props.newKey;
+  const button = document.getElementById("theButton");
+  const plus = document.getElementById("plus");
+  const minus = document.getElementById("minus");
+  const numbers = document.getElementById("timer");
 
   const audio = new Audio("sound.mp3");
 
@@ -10,19 +14,35 @@ function Time(props) {
 
   const renderer = ({ minutes, seconds, completed }) => {
     audio.pause();
+    audio.currentTime = 0;
+
+    if (plus) {
+      plus.style.display = "inline-block";
+    }
+    if (minus) {
+      minus.style.display = "inline-block";
+    }
+    if (button) {
+      button.innerText = "Start";
+    }
+
     if (completed) {
       audio.play();
-      const numbers = document.getElementById("timer");
+
       const colors = setInterval(() => {
         numbers.style.color === "red"
           ? (numbers.style.color = "white")
           : (numbers.style.color = "red");
       }, 500);
-      document.getElementById("theButton").addEventListener("click", () => {
+
+      button.addEventListener("click", () => {
         audio.pause();
         clearInterval(colors);
         numbers.style.color = "white";
-      }); // ??  audio.currentTime = 0;
+      });
+      plus.style.display = "none";
+      minus.style.display = "none";
+      button.innerText = "Restart";
 
       return <Complete />;
     } else {
@@ -35,21 +55,21 @@ function Time(props) {
   };
 
   function stop() {
-    window.location.reload();    
+    window.location.reload();
   }
 
   return (
     <div className="ticker">
       <h1 id="timer">
         <Countdown
-          date={Date.now() + parseInt(props.setTime) * 60000} //*60000 for minutes
+          date={Date.now() + parseInt(props.setTime) * 60000} 
           key={key}
           renderer={renderer}
-          autoStart={props.newKey === 0 ? false : true}
+          autoStart={key === 0 ? false : true}
         />
       </h1>
       <button onClick={stop} id="toggle" className="cancel-button">
-        Clear
+        Cancel
       </button>
     </div>
   );

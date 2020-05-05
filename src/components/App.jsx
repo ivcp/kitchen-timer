@@ -4,19 +4,16 @@ import Timer from "./Timer";
 
 function App() {
   const [newT, setNewT] = useState(5);
-  const [key, setKey] = useState(0)
-  
+  const [key, setKey] = useState(0);
 
   function minutesInput(nMin) {
     setNewT(nMin);
   }
 
-  function keyS(k){
-    setKey(k);   
-    
+  function keyS(k) {
+    setKey(k);
   }
 
-  
   return (
     <div className="timer-box">
       <Input minutes={minutesInput} sendKey={keyS} />

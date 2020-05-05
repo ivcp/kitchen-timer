@@ -5,32 +5,54 @@ function Input(props) {
   const [key, setKey] = useState(1);
 
   function handleChange(event) {
-    const newMin = parseInt(event.target.value);
-    setMin(newMin);
+    if (event.target.name === "plus") {
+      if (min < 60) {
+        setMin(min + 1);
+        props.minutes(min + 1);
+      }
+    } else if (event.target.name === "minus") {
+      if (min > 1) {
+        setMin(min - 1);
+        props.minutes(min - 1);
+      }
+    }
   }
 
-  function getMinutes(event) {
-    props.minutes(min);
-    setKey(key + 1);       
+  function getKey(event) {
+    setKey(key + 1);
     props.sendKey(key);
-    //setMin("");
   }
 
   return (
     <div className="input-box">
-      <form>
-        <label htmlFor="minutes">minutes:</label>
-        <input
-          onChange={handleChange}
-          type="number"
-          name="minutes"
-          id="minutes"
-          value={min}
-        ></input>
-        <button onClick={getMinutes} id="theButton" type="button" className="start-button">
-          Start
-        </button>
-      </form>
+    
+      <button
+        className="plus-minus"
+        type="button"
+        id="plus"
+        name="minus"
+        onClick={handleChange}
+      >
+        -
+      </button>
+      <button
+        className="plus-minus"
+        type="button"
+        id="minus"
+        name="plus"
+        onClick={handleChange}
+      >
+        +
+      </button>
+      <button
+        onClick={getKey}
+        id="theButton"
+        type="button"
+        className="start-button"
+      >
+        Start
+      </button>
+    
     </div>
   );
 }

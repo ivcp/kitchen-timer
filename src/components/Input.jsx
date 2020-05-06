@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
+
+
 function Input(props) {
   const [min, setMin] = useState(5);
   const [key, setKey] = useState(1);
 
   function handleChange(event) {
+        
     if (event.target.name === "plus") {
       if (min < 60) {
         setMin(min + 1);
@@ -16,12 +19,12 @@ function Input(props) {
         props.minutes(min - 1);
       }
     }
-  }
+  };
 
   function getKey(event) {
     setKey(key + 1);
     props.sendKey(key);
-  }
+  };
 
   return (
     <div className="input-box">
@@ -50,11 +53,11 @@ function Input(props) {
         type="button"
         className="start-button"
       >
-        Start
+       Start
       </button>
     
     </div>
   );
-}
+};
 
 export default Input;

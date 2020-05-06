@@ -1,5 +1,10 @@
+* {
+    font-family: Roboto, sans-serif;
+    
+}
+
 body {
-    font-family: Ubuntu;
+    font-family: Roboto, sans-serif;
     background-color: #142850;
     background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");    
 }
@@ -17,8 +22,7 @@ body {
 
 .start-button {
     display:inline-block;
-    background-color: #27496d;
-    font-family: Ubuntu;
+    background-color: #27496d;    
     letter-spacing: 1px;
     font-size: 1.5rem;
     color: white;
@@ -26,15 +30,14 @@ body {
     border-radius: 12px;
     border: 1px solid black;
     box-shadow: 0 1px 2px #142850;
-    margin: 0 20px; 
+    margin: 0 20px 5px 20px; 
     
 }
 
 .plus-minus{
     display:inline-block;
-    margin: 0 20px;
+    margin: 0 10px 5px;
     background-color: #27496d;
-    font-family: Ubuntu;
     font-size: 1.5rem;
     color: white;
     padding: 15px;
@@ -64,16 +67,16 @@ body {
 
 
 h1 {
-    font-family: 'Josefin Sans', sans-serif;
     color: white;
     font-size: 7rem;    
     letter-spacing: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .cancel-button {
     background-color: #27496d;
-    font-size: 1.5rem;
-    font-family: Ubuntu;
+    font-size: 1.5rem;    
     letter-spacing: 1px;
     color: white;
     padding: 12px;

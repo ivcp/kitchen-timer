@@ -1,5 +1,8 @@
 import React from "react";
 import Countdown from "react-countdown";
+import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
+import AlarmOnIcon from '@material-ui/icons/AlarmOn';
+
 
 function Time(props) {
   const key = props.newKey;
@@ -10,7 +13,7 @@ function Time(props) {
 
   const audio = new Audio("sound.mp3");
 
-  const Complete = () => <span>Over</span>;
+  const Complete = () => <AlarmOnIcon style={{ fontSize: "8rem" }}></AlarmOnIcon>;
 
   const renderer = ({ minutes, seconds, completed }) => {
     audio.pause();
@@ -23,7 +26,7 @@ function Time(props) {
       minus.style.display = "inline-block";
     }
     if (button) {
-      button.innerText = "Start";
+    button.innerText = "Start";
     }
 
     if (completed) {
@@ -62,14 +65,14 @@ function Time(props) {
     <div className="ticker">
       <h1 id="timer">
         <Countdown
-          date={Date.now() + parseInt(props.setTime) * 60000} 
+          date={Date.now() + parseInt(props.setTime) * 1000} 
           key={key}
           renderer={renderer}
           autoStart={key === 0 ? false : true}
         />
       </h1>
       <button onClick={stop} id="toggle" className="cancel-button">
-        Cancel
+        <CancelOutlinedIcon style={{ fontSize: "1.2rem" }}></CancelOutlinedIcon> Cancel
       </button>
     </div>
   );

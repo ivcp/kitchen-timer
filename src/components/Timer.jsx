@@ -65,7 +65,7 @@ function Time(props) {
     <div className="ticker">
       <h1 id="timer">
         <Countdown
-          date={Date.now() + parseInt(props.setTime) * 1000} 
+          date={Date.now() + parseInt(props.setTime) * 60000} 
           key={key}
           renderer={renderer}
           autoStart={key === 0 ? false : true}
